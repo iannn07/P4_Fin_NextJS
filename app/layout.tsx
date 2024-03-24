@@ -1,5 +1,16 @@
 import '@/app/ui/global.css'
 import { inter } from './ui/fonts';
+import { Metadata } from 'next';
+ 
+export const metadata: Metadata = {
+  title: {
+    template: '%s | NextJS 14 Dashboard',
+    default: 'NextJS 14 Dashboard',
+  },
+
+  description: 'NextJS 14 Course',
+  metadataBase: new URL('https://next-learn-dashboard.vercel.sh'),
+};
 
 export default function RootLayout({
   children,
@@ -8,9 +19,6 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <head>
-        <title>NextJS 14 Dashboard</title>
-      </head>
       <body className={`${inter.className} antialiased`}>{children}</body>
     </html>
   );
